@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@200&family=Roboto:wght@300;400;700&family=Rubik+Distressed&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+/* Seccion Header*/
+header{
+    position: fixed;
+    background-color:black ;
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h3{
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+header div img{
+    cursor: pointer;
+}
+
+/*Cantidad de productos en el carrito*/
+.cantidad-carrito{
+    background-color: red;
+    color: aliceblue;
+    border-radius: 50%;
+    font-size: 1em;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
+
+/* Seccion Main Titulo*/
+.banner{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ) 
+    ,url(../Imagenes/Banner_Music.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner h1{
+    font-family: 'Lato', sans-serif;
+    font-size: 4em;
+    color: #faa307; 
+    text-align: center;
+}
+
+section{
+    background: radial-gradient(circle, rgba(42,46,54,0.8491771708683473) 11%, rgba(0,0,0,0.7511379551820728) 100%);
+}
+
+.shop-content{
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.shop-content h2{
+    text-align: left;
+    padding: 1%;
+    font-family: 'Lato', sans-serif;
+    font-size: 2.4em;
+    color: antiquewhite;
+    border-bottom: 5px solid #faa307;
+}
+
+/* Seccion Main Cards*/
+.card-productos{
+    width: 80%;
+    padding: 5% 0;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.card{
+    width: 20em;
+    margin: 0.8em;
+    padding: 1.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1.2em 1.2em 3.1em rgba(0,0,0,0.5);
+    background-color: rgba(228, 235, 235, 0.1);
+    border-left: 1px solid rgba(228, 235, 235, 0.5);
+    border-top: 1px solid rgba(228, 235, 235, 0.5);  
+    border-radius: 1em;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.contenedor-img{
+    width: 100%;
+    height: 15em;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.contenedor-img img{
+    width: 100%;
+    height: 15em;
+}
+
+.titulo-card{
+    margin: 5% 0;
+    font-size: 1.5em;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.precioProducto{
+    margin-bottom: 5%;
+    font-size: 1.8em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.agregar-compra{
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.7em 1em;
+    border-radius: 0.5em;
+    border: 1px solid rgba(0,0,0,0.5);
+    box-shadow: 0.5em 0.5em 1em rgba(0,0,0,0.5);
+    background-color: #faa307;
+    cursor: pointer;
+}
+
+.agregar-compra:hover{
+    background-color: #df9307
+}
+
+/*-_-_-_-_-_-_-_-_-_-_-_Estilos del Modal-_-_-_-_-_-_-_-_-_-_*/
+.modal-container{
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: #fff;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+}
+
+.modal-container::-webkit-scrollbar{
+    display: none;
+}
+
+/*Header*/
+.modal-header {
+    margin: 2% 0 3% 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: aliceblue;
+}
+
+.modal-titulo{
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    justify-self: start;
+}
+
+.modal-header-button{
+    cursor: pointer;
+}
+
+/*Body*/
+.modal-body{
+    margin: 10px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body img{
+    height: 120px;
+    width: 120px;
+}
+
+.modal-body h3{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8em;
+    font-weight: lighter;
+}
+
+.modal-body p{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+}
+
+.restar{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.sumar{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+.boton-eliminar img{
+    cursor: pointer;
+    height: 50px;
+}
+
+/*Footer*/
+.total-footer{
+    font-size: 3em;
+    padding: 15px;
+    text-align: center;
+}
+
+.precio-total{
+    font-family: 'lato', sans-serif;
+    font-size: 1.3em;
+}
+
+.vaciar-carrito{
+    margin: 5px 0;
+    margin-top: 3%;
+    padding: 0.2em;
+    font-size: 0.7em;
+    font-family: 'Roboto' sans-serif;
+    border-radius: 0.3em;
+    box-shadow: 0.1em 0 0 0 rgba(252, 255, 255, 0.534);
+    background-color: red;
+    cursor: pointer;
+}
+
+.pagar{
+    margin: 5px 0;
+    margin-top: 3%;
+    padding: 0.2em;
+    font-size: 0.7em;
+    font-family: 'Roboto' sans-serif;
+    border-radius: 0.3em;
+    box-shadow: 0.1em 0 0 0 rgba(252, 255, 255, 0.534);
+    background-color: rgba(40, 185, 40, 0.863);
+    cursor: pointer;
+    cursor: pointer;
+}
+
+.vaciar-carrito:hover{
+    background-color: rgba(255, 0, 0, 0.685);
+}
+
+.pagar:hover{
+    background-color: rgba(40, 185, 40, 0.678);
+}

@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./Script/app.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
     <title>Music Store</title>
 </head>
 <body>
     <header>
-        <h1>Bienvenidos a Music Store</h1>
-        <h2>Simulador de compra de Instrumentos Musicales</h2>
+        <h3 class="logo">Music Store</h3>
+        <div id="verCarrito"><span id="cantidadCarrito" class="cantidad-carrito"></span>
+            <img src="./Imagenes/icons8-shopping-cart-48.png" alt="Icono Carrito">
+        </div>
     </header>
+
+    <main>
+        <div class="banner">
+            <h1>Tienda online de Instrumentos Musicales</h1>
+        </div>
+
+        <section>
+            <div class="shop-content">
+                <h2>Instrumentos en stock</h2>
+                <div id="cardProductos1" class="card-productos"></div>
+            </div>
+        </section>
+
+        <div id="modalContainer" class="modal-container"></div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="./js/stock.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/carrito.js"></script>
 </body>
 </html>
