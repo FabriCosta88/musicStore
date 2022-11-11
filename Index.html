@@ -5,22 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/kareoke.js"></script>
     <title>Music Store</title>
 </head>
 <body>
     <header>
-        <h3 class="logo">Music Store</h3>
+        <a href="#banner">
+            <h3 class="logo">Music Store</h3>
+        </a>
+        <a href="#main-kareoke">
+            <div class="kareoke">
+                <img class="logo-api" src="./Imagenes/Logo Api/Kareoke.jpg" alt="Logo Kareoke">
+                <p class="texto-api">Kareoke</p>
+            </div>
+        </a>
         <div id="verCarrito"><span id="cantidadCarrito" class="cantidad-carrito"></span>
             <img src="./Imagenes/icons8-shopping-cart-48.png" alt="Icono Carrito">
         </div>
     </header>
 
     <main>
-        <div class="banner">
+        <div id="banner">
             <h1>Tienda online de Instrumentos Musicales</h1>
         </div>
 
-        <section>
+        <section class="instrumentos">
             <div class="shop-content">
                 <h2>Instrumentos en stock</h2>
                 <div id="cardProductos1" class="card-productos"></div>
@@ -28,10 +37,22 @@
         </section>
 
         <div id="modalContainer" class="modal-container"></div>
-    </main>
-
-    <footer>
         
+        <section id="main-kareoke">
+            <h2>Kareoke</h2>
+            <form>
+                <p>
+                    <label for="buscador">Ingresa el nombre de la cancion</label>
+                    <input type="text" id="buscador">
+                </p>
+                <button type="button" class="boton-buscar" id="search">Buscar</button>
+            </form>
+            <div id="infoApi"></div>
+            
+        </section>
+    </main>
+        
+    <footer>
 
     </footer>
     <script src="./js/stock.js"></script>
