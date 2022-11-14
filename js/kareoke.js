@@ -13,35 +13,39 @@ const options = {
     }
 };
     
-function traerInfo(done){
+function traerInfo(){
  
-    const result = fetch('https://kareoke.p.rapidapi.com/v1/song/search?q=soda%20estereo&limit=1', options)
-
-    result
-	    .then(response => response.json())
-        .then(data =>{
-            done(data)
-        })
-	    .then(response => console.log(response))
-	    .catch(err => console.error(err));
+fetch('https://kareoke.p.rapidapi.com/v1/song/search?q=Spotlight&limit=1', options)
+	.then(response => response.json())
+	.then(data => console.log(data))
+	.catch(err => console.error(err));
 }
 
-traerInfo(data => {
+/* A continuacion intente de mil maneras recorrer el objeto de la api y que cargue los valores en el DOM, claramente no lo logre :(
+Busque mil videos en youtube pero ninguno me sirvio... o evidentemente no supe realizarlo correctamente....
+La idea era que en el input se escribiera el nombre de una cancion, y al apretar el boton "buscar" devuelva el resultado. Probe la API desde rapidapi y veia como funcionaba pero al llevarla a mi proyecto no logre nada.... Solo que me muestre el objeto en consola....
+Pedi ayuda por la plataforma pero nadie me contesto.... 
+Se que no cumpli con este apartado de las API pero si pudieras corregime el proyecto y explicarme como realizar lo que quise hacer me seria de una gran ayuda!!! */
 
-    console.log(data)
+search.addEventListener("click", () => {
 
-    /* data.result.forEach(element => {
-        let div = document.createElement('div')
-        div.classList.add ('tarjeta')
-        div.innerHTML = `
-        <div class="imagen">
-            <img src=${element.image} alt="">
-        </div>
-        <h3 class="title">${element.title}</h3>
-        <p class="direccion">${element.url}</p>
-        `;
+    traerInfo(data => {
         
-        infoApi.append (div);
-    }); */
+        console.log(data)
+        
+        for (let elements in youtube)  {
+            let div = document.createElement('div')
+            div.classList.add ('tarjeta')
+            div.innerHTML = `
+            <div class="imagen">
+                <img src=${elements[image]} alt="">
+            </div>
+            <h3 class="title">${elements[title]}</h3>
+            <p class="direccion">${elements[url]}</p>
+            `;
+            
+            infoApi.append (div);
+        };
+    })
 })
     

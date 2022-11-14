@@ -83,12 +83,49 @@ function pintarCarrito () {
     let vaciarCarrito = precioTotal.querySelector(".vaciar-carrito")
 
     vaciarCarrito.addEventListener("click", () => {
+        Swal.fire({
+            title: 'Seguro quieres vaciar el carrito?',
+            text: "No podras revertir la accion!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, vaciar!'
+        })  .then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Carrito Vacio!',
+                'Su carrito ha sido vaciado.',
+                'success'
+              )
+            carrito = []
+            saveLocal()
+            pintarCarrito()
+            contadorCarrito()
+            }
+          })
+
+        saveLocal()
+        pintarCarrito()
+        contadorCarrito()
+    })
+//Boton Pagar: Solo aplico una notificacion que se pago correctamente
+let pagar = precioTotal.querySelector(".pagar")
+
+pagar.addEventListener("click", () => {
+    Swal.fire({
+        icon: 'success',
+        title: 'Pagado',
+        text: 'Gracias por su compra!',
+      })
         carrito = []
         saveLocal()
         pintarCarrito()
         contadorCarrito()
     })
 }
+
+
 
 verCarrito.addEventListener("click", pintarCarrito)
 

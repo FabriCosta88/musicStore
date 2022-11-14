@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/kareoke.js"></script>
     <title>Music Store</title>
 </head>
@@ -40,13 +43,12 @@
         
         <section id="main-kareoke">
             <h2>Kareoke</h2>
-            <form>
-                <p>
-                    <label for="buscador">Ingresa el nombre de la cancion</label>
-                    <input type="text" id="buscador">
-                </p>
+            <div class="form-api">
+                <label for="buscador">Ingresa el nombre de la cancion :</label>
+                <input type="text" id="buscador" class="barra-busqueda">
                 <button type="button" class="boton-buscar" id="search">Buscar</button>
-            </form>
+            </div>
+                
             <div id="infoApi"></div>
             
         </section>
